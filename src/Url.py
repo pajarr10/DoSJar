@@ -17,6 +17,7 @@ def cls():
 cls()
 os.system("python src/logo.py")
 
+print("target =", target)
 target = target.replace("http://", "")
 target = target.replace("https://", "")
 target = target.replace("www.", "")

